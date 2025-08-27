@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k % n; // in case k > n
+
+        // Reverse whole array
+        reverse(nums.begin(), nums.end());
+
+        // Reverse first k elements
+        reverse(nums.begin(), nums.begin() + k);
+
+        // Reverse remaining n-k elements
+        reverse(nums.begin() + k, nums.end());
+    }
+};
